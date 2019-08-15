@@ -5,8 +5,10 @@
  <body>
    <a-scene>
      <a-assets>
-       <img id="groundTexture" src="assets/images/floor.jpg">
-       <img id="skyTexture" src="assets/images/sky.jpg">
+       <img id="groundTexture" src="assets/images/10.jpg">
+       <img id="skyTexture" src="assets/images/starwars.jpg">
+	<img id="moon" src="assets/textures/moon_1024.jpg">
+        <img id="brick" src="assets/textures/brick_roughness.jpg">
        <a-asset-item id="yoda" src="assets/models/sgp24_yoda_master/scene.gltf"></a-asset-item>
      </a-assets>
 
@@ -24,14 +26,18 @@
        </a-entity>
      </a-entity>
 
-     <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-     <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
+    
+     
      <a-plane src="#groundTexture" position="0 0 -4" rotation="-90 0 0" width="100" height="100" color="#7BC8A4"></a-plane>
      <a-sky radius="30" src="#skyTexture" theta-length="90"></a-sky>
-     <a-gltf-model src="#yoda" position="0 1.25 -5"></a-gltf-model>
+     <!--
+	<a-gltf-model src="#yoda" position="0 1.25 -5"></a-gltf-model>
+	-->
 
-     <a-link rotation="0 45 0" position="7 2 7" href="teleport_fuse_example.html" title="Home" on"click"></a-link>
+     <a-sphere radius="2" src="#moon" position="0 6 -5"></a-sphere>
+     <a-box position="-1 4 -3" rotation="0 45 0" src="#brick"></a-box>
+     <a-link rotation="0 45 0" position="7 2 7" href="http://192.168.3.109:8080/vr/landscape.html" title="Home" on"click"></a-link>
 
    </a-scene>
  </body>
-</html5
+</html>

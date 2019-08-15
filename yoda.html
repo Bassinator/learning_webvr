@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>programier club Epic Raspberies</title>
+    <script src="assets/lib/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="yoda" src="assets/models/sgp24_yoda_master/scene.gltf"></a-asset-item>
+      </a-assets>
+
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+      
+       
+      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+
+      <a-gltf-model src="#yoda" position="0 1.25 -5"></a-gltf-model>
+
+      <a-sky color="lightblue"></a-sky>
+    </a-scene>
+  </body>
+</html>
