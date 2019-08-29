@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <script src="assets/lib/aframe.min.js"></script>
+    <script src="assets/lib/aframe-extras.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <a-mixin id="checkpoint"></a-mixin>
+        <a-mixin id="checkpoint-hovered" color="#6CEEB5"></a-mixin>
+        <a-asset-item id="yoda" src="assets/models/sgp24_yoda_master/scene.gltf"></a-asset-item>
+        <a-asset-item id="storm_trooper" src="assets/models/star_wars_7_storm_trooper/scene.gltf"></a-asset-item>
+        <img id="skyTexture" src="assets/images/sky2.jpg">
+        <img src="assets/images/grid.png" id="grid">
+      </a-assets>
+
+      <a-entity position="-5 1.5 -5" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+        <a-gltf-model src="#yoda"></a-gltf-model>
+      </a-entity>
+
+      <a-entity position="-5 1.5 5" animation="property: rotation; to: 360 360 0; loop: true; dur: 4000">
+        <a-box rotation="0 45 0" color="#4CC3D9" shadow></a-box>
+      </a-entity>
+
+      <a-entity position="5 1.5 -5" animation="property: rotation; to: 360 360 0; loop: true; dur: 4000">
+        <a-cylinder radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
+      </a-entity>
+
+      <a-entity position="5 1.5 5" animation="property: rotation; to: 360 360 0; loop: true; dur: 4000">
+        <a-torus-knot color="#B84A39" arc="180" p="2" q="7" radius="2" radius-tubular="0.1"></a-torus-knot>
+      </a-entity>
+
+      <a-link rotation="0 45 0" position="14 2 14" href="landscape.html" title="Home" on"click"></a-link>
+
+      <!-- Player -->
+      <a-entity id="rig" movement-controls="controls: checkpoint" checkpoint-controls="mode: animate">
+        <a-entity camera
+                  position="0 1.6 0"
+                  look-controls="pointerLockEnabled: true">
+        <a-entity cursor="fuse: true;"
+                  position="0 0 -1"
+                  geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03;"
+                  material="color: #CCC; shader: flat;"
+                  animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 150; from: 0.1 0.1 0.1; to: 1 1 1"
+                  animation__fusing="property: scale; startEvents: fusing; easing: easeInCubic; dur: 1500; from: 1 1 1; to: 0.1 0.1 0.1"></a-entity>
+        </a-entity>
+      </a-entity>
+
+      <!-- Terrain -->
+      <a-entity
+        geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0"
+        material="src: #grid; repeat: 10000 10000; transparent: true;metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;"></a-entity>
+
+      <!-- sky -->
+      <a-sky src="#skyTexture" rotation="0 -90 0"></a-sky>
+
+      <!-- Checkpoints -->
+      <a-entity position="1 0 1">
+        <a-cylinder checkpoint radius="1" height="0.1" position="0 0 -10" color="#39BB82"></a-cylinder>
+        <a-cylinder checkpoint radius="1" height="0.1" position="0 0 0" color="#39BB82"></a-cylinder>
+        <a-cylinder checkpoint radius="1" height="0.1" position="0 0 10" color="#39BB82"></a-cylinder>
+
+        <a-cylinder checkpoint radius="1" height="0.1" position="10 0 -10" color="#39BB82"></a-cylinder>
+        <a-cylinder checkpoint radius="1" height="0.1" position="10 0 0" color="#39BB82"></a-cylinder>
+        <a-cylinder checkpoint radius="1" height="0.1" position="10 0 10" color="#39BB82"></a-cylinder>
+
+        <a-cylinder checkpoint radius="1" height="0.1" position="-10 0 -10" color="#39BB82"></a-cylinder>
+        <a-cylinder checkpoint radius="1" height="0.1" position="-10 0 0" color="#39BB82"></a-cylinder>
+        <a-cylinder checkpoint radius="1" height="0.1" position="-10 0 10" color="#39BB82"></a-cylinder>
+      </a-entity>
+      -->
+
+      <!-- Lighting -->
+      <a-light type="ambient" color="#fff"></a-light>
+    </a-scene>
+  </body>
+</html>
