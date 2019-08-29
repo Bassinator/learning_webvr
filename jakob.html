@@ -1,3 +1,4 @@
+
 <html>
  <head>
    <script src="assets/lib/aframe.min.js"></script>
@@ -30,13 +31,15 @@
      
      <a-plane src="#groundTexture" position="0 0 -4" rotation="-90 0 0" width="100" height="100" color="#7BC8A4"></a-plane>
      <a-sky radius="30" src="#skyTexture" theta-length="90"></a-sky>
-     <!--
+ 
 	<a-gltf-model src="#yoda" position="0 1.25 -5"></a-gltf-model>
-	-->
+	
 
      <a-sphere radius="2" src="#moon" position="0 6 -5"></a-sphere>
-     <a-box position="-1 4 -3" rotation="0 45 0" src="#brick"></a-box>
-     <a-link rotation="0 45 0" position="7 2 7" href="http://192.168.3.109:8080/vr/landscape.html" title="Home" on"click"></a-link>
+     <a-box position="-2 1 -5" rotation="0 0 0" height="4" width="0.5" depth="4" src="#brick"></a-box>
+     <a-box position="2.5 1 -5" rotation="0 0 0" height="4" width="0.5" depth="4" src="#brick"></a-box>
+     <!--<a-box position="-2 4 -5" rotation="0 0 0" height="4" width="0.5" depth="5" src="#brick"></a-box>-->
+     <!--<a-link rotation="0 45 0" position="7 2 7" href="http://192.168.3.112:8080/vr/justus.html" title="Home" on"click"></a-link>-->
 
    </a-scene>
  </body>
