@@ -9,14 +9,9 @@
         <a-mixin id="checkpoint"></a-mixin>
         <a-mixin id="checkpoint-hovered" color="#6CEEB5"></a-mixin>
         <a-asset-item id="yoda" src="assets/models/sgp24_yoda_master/scene.gltf"></a-asset-item>
-        <a-asset-item id="storm_trooper" src="assets/models/star_wars_7_storm_trooper/scene.gltf"></a-asset-item>
         <img id="skyTexture" src="assets/images/sky2.jpg">
         <img src="assets/images/grid.png" id="grid">
       </a-assets>
-
-      <a-entity position="-5 1.5 -5" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
-        <a-gltf-model src="#yoda"></a-gltf-model>
-      </a-entity>
 
       <a-entity position="-5 1.5 5" animation="property: rotation; to: 360 360 0; loop: true; dur: 4000">
         <a-box rotation="0 45 0" color="#4CC3D9" shadow></a-box>

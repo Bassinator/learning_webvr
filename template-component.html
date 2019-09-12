@@ -1,0 +1,35 @@
+<head>
+  <title>My A-Frame Scene</title>
+    <script src="assets/lib/aframe.min.js"></script>
+    <script src="assets/lib/aframe-template-component.min.js"></script>
+    <script src="assets/lib/aframe-event-set-component.min.js"></script>
+</head>
+
+<body>
+  <a-scene>
+    <a-assets>
+      <img id="groundTexture" src="assets/images/floor.jpg">
+      <img id="skyTexture" src="assets/images/sky.jpg">
+      <a-asset-item id="yoda" src="assets/models/sgp24_yoda_master/scene.gltf"></a-asset-item>
+    </a-assets>
+  <!-- Start Templates. -->
+  <a-assets>
+    <script id="scene1" type="text/html">
+      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
+    </script>
+    <script id="scene2" type="text/html">
+      <a-sphere radius="2" position="0 6 -5"></a-sphere>
+    </script>
+  </a-assets>
+  <!-- <a-entity template="src: #scene1"></a-entity> -->
+
+  <a-entity id="template" template="src: scenes/hellovr.html" template-set=></a-entity>
+
+  <a-box color="green"
+         event-set__click="_target: #template; template: src: #scene1"
+         event-set__mouseenter="material.color: blue"></a-box>
+
+  <a-camera><a-cursor></a-cursor></a-camera>
+
+</a-scene>
+</body>
