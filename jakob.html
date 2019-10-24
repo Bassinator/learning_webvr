@@ -37,8 +37,11 @@
 
     <a-entity id="template" template="src: scenes/jakob-scene.html" template-set=></a-entity>
 
-  <a-box color="green"
-         event-set__click="_target: #template; template: src: scenes/justus-scene.html"></a-box
+    <a-box position="-1 0.5 -3" color="red"
+         event-set__click="_target: #template; template: src: scenes/justus-scene.html"></a-box>
+
+    <a-box position="1 0.5 -3" color="blue"
+         event-set__click="_target: #template; template: src: scenes/jakob-scene.html"></a-box>
      
    </a-scene>
  </body>
